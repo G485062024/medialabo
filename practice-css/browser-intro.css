@@ -13,6 +13,9 @@ h1 {
 h2 {
 	border: solid 1px black;
 	margin: 5px;
+	font-family: cursive;
+	color: #3f3faf;
+	linear-gradient(white, #ffefaf);
 }
 
 div#zentai {
@@ -30,4 +33,8 @@ div#zentai > div {
 }
 img.sign{
 	float: right;
+}
+title {
+	color: white;
+	text-shadow: navy;
 }
