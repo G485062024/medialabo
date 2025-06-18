@@ -1,0 +1,30 @@
+table{
+    width: auto;
+    border-collapse: collapse;
+    background-color: thistle;
+}
+td{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+img{
+  float: right;
+  height: 308px;
+  padding-right: 155px;
+  padding-top: 10px;
+}
+body{
+    background-color: wheat;
+}
+
+h1{
+  display: block;
+  text-align: center;
+  font-style: normal;
+  font-size: 5em;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid #375e97;
+  width: 60%;
+  margin: 1em auto;
+}
