@@ -11,6 +11,23 @@ function print(data) {
   console.log("出演者:" + data.list.g1[kennsuu-1].act);
 }
 
+//課題4
+let p, q;
+p = document.querySelector('button#input1');
+p.addEventListener('click',show1);
+function show1(){
+  let box1 = document.querySelector('input#input1');
+  let b1 = box1.value;
+  console.log(b1);
+}
+q = document.querySelector('button#submit');
+q.addEventListener('click',show2);
+function show2(){
+  let box2 = document.querySelector('select#options');
+  let b2 = box2.value;
+  console.log(b2);
+}
+
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
 
