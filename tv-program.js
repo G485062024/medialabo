@@ -12,14 +12,17 @@ function print(data) {
 }
 
 //課題4
-let p, q;
+let q;
+/*
+let p;
 p = document.querySelector('button#input1');
 p.addEventListener('click',show1);
 function show1(){
-  let box1 = document.querySelector('input#input1');
+  let box1 = document.querySelector('select#option');
   let b1 = box1.value;
   console.log(b1);
 }
+  */
 q = document.querySelector('button#submit');
 q.addEventListener('click',show2);
 function show2(){
@@ -29,90 +32,186 @@ function show2(){
 }
 
 // 課題5-1 の関数 printDom() はここに記述すること
+
+let countremove = 0;
 function printdom(data) {
+countremove = countremove+1;
+  if(countremove>1){
+    let oldul = document.querySelector('ul');
+    oldul.remove();
+  };
+  
 let u = document.createElement('ul');
 let l = document.createElement('li');
 
+  let key2 = document.querySelector('#option').value;
+  let id2;
+  switch(key2){
+    case 'NHK総合1':
+      id2 = 'g1';
+      break;
+    case 'Eテレ1':
+      id2 = 'e1';
+      break;
+    default:
+  }
+if(id2 == 'g1'){
+
 //検索結果
-l.textContent = ('開始時間: ' + data.list.g1[0].start_time);
+for(let id = 0;id<data.list.g1.length;id++){
+let l = document.createElement('li');
+l.textContent = ('開始時間: ' + data.list.g1[id].start_time);
 u.insertAdjacentElement('beforeend', l);
-l = document.createElement('li');
 
-l.textContent = ('終了時間: ' + data.list.g1[0].end_time);
+l = document.createElement('li');
+l.textContent = ('終了時間: ' + data.list.g1[id].end_time);
 u.insertAdjacentElement('beforeend', l);
-l = document.createElement('li');
 
-l.textContent = ('チャンネル: ' + data.list.g1[0].service.name);
+l = document.createElement('li');
+l.textContent = ('チャンネル: ' + data.list.g1[id].service.name);
 u.insertAdjacentElement('beforeend', l);
-l = document.createElement('li');
 
-l.textContent = ('タイトル: ' + data.list.g1[0].title);
+l = document.createElement('li');
+l.textContent = ('タイトル: ' + data.list.g1[id].title);
 u.insertAdjacentElement('beforeend', l);
-l = document.createElement('li');
 
-l.textContent = ('サブタイトル: ' + data.list.g1[0].subtitle);
+l = document.createElement('li');
+l.textContent = ('サブタイトル: ' + data.list.g1[id].subtitle);
 u.insertAdjacentElement('beforeend', l);
-l = document.createElement('li');
 
-l.textContent = ('番組説明: ' + data.list.g1[0].content);
+l = document.createElement('li');
+l.textContent = ('番組説明: ' + data.list.g1[id].content);
 u.insertAdjacentElement('beforeend', l);
-l = document.createElement('li');
 
-l.textContent = ('出演者: ' + data.list.g1[0].act);
+l = document.createElement('li');
+l.textContent = ('出演者: ' + data.list.g1[id].act);
 u.insertAdjacentElement('beforeend', l);
-l = document.createElement('li');
 
+div = document.querySelector('div#result');
+div.insertAdjacentElement('afterend', u);
 //分かれ目
 u.insertAdjacentHTML('beforeend', '<br>');
 u.insertAdjacentHTML('beforeend', '<br>');
+}
+//e1の時
+}else if(id2 == 'e1'){
 
-
-//こっからg1[1]
-l.textContent = ('開始時間: ' + data.list.g1[1].start_time);
+for(let id = 0;id<data.list.e1.length;id++){
+l.textContent = ('開始時間: ' + data.list.e1[id].start_time);
 u.insertAdjacentElement('beforeend', l);
 l = document.createElement('li');
 
-l.textContent = ('終了時間: ' + data.list.g1[1].end_time);
+l.textContent = ('終了時間: ' + data.list.e1[id].end_time);
 u.insertAdjacentElement('beforeend', l);
 l = document.createElement('li');
 
-l.textContent = ('チャンネル: ' + data.list.g1[1].service.name);
+l.textContent = ('チャンネル: ' + data.list.e1[id].service.name);
 u.insertAdjacentElement('beforeend', l);
 l = document.createElement('li');
 
-l.textContent = ('タイトル: ' + data.list.g1[1].title);
+l.textContent = ('タイトル: ' + data.list.e1[id].title);
 u.insertAdjacentElement('beforeend', l);
 l = document.createElement('li');
 
-l.textContent = ('サブタイトル: ' + data.list.g1[1].subtitle);
+l.textContent = ('サブタイトル: ' + data.list.e1[id].subtitle);
 u.insertAdjacentElement('beforeend', l);
 l = document.createElement('li');
 
-l.textContent = ('番組説明: ' + data.list.g1[1].content);
+l.textContent = ('番組説明: ' + data.list.e1[id].content);
 u.insertAdjacentElement('beforeend', l);
 l = document.createElement('li');
 
-l.textContent = ('出演者: ' + data.list.g1[1].act);
+l.textContent = ('出演者: ' + data.list.e1[id].act);
 u.insertAdjacentElement('beforeend', l);
 l = document.createElement('li');
 
 div = document.querySelector('div#result');
 div.insertAdjacentElement('afterend', u);
+
+//二個目の番組
+
+//分かれ目
+u.insertAdjacentHTML('beforeend', '<br>');
+u.insertAdjacentHTML('beforeend', '<br>');
+}
+}
 }
 
+
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
-
-
+//let b1 = document.querySelector('#input1');
+let b2 = document.querySelector('#submit');
+//b1.addEventListener('click',sendRequest);
+b2.addEventListener('click',sendRequest);
 
 
 // 課題6-1 のイベントハンドラ sendRequest() の定義
 function sendRequest() {
 
+  let key1 = document.querySelector('#options').value;
+  let id1;
+  switch(key1){
+    case 'ニュース・報道':
+      id1 = '0000';
+      break;
+    case 'スポーツ':
+      id1 = '0100';
+      break;
+    case '情報・ワイドショー':
+      id1 = '0205';
+      break;
+    case 'ドラマ':
+      id1 = '0300';
+      break;
+    case '音楽':
+      id1 = '0409';
+      break;
+    case 'バラエティ':
+      id1 = '0502';
+      break;
+    case '映画':
+      id1 = '0600';
+      break;
+    case 'アニメ':
+      id1 = '0700';
+      break;
+    case 'ドキュメンタリー・教養':
+      id1 = '0800';
+      break;
+    case '劇場・公演':
+      id1 = '0903';
+      break;
+    case '趣味・教育':
+      id1 = '1000';
+      break;
+    case '福祉':
+      id1 = '1100';
+      break;
+    default:
+  }
+  let key2 = document.querySelector('#option').value;
+  let id2;
+  switch(key2){
+    case 'NHK総合1':
+      id2 = 'g1';
+      break;
+    case 'Eテレ1':
+      id2 = 'e1';
+      break;
+    default:
+  }
+
+  let url = 'https://www.nishita-lab.org/web-contents/jsons/nhk/' + id2 + '-' + id1 + '-j.json';
+  axios.get(url)
+    .then(showResult)
+    .catch(showError)
+    .then(finish);
 }
 
 // 課題6-1: 通信が成功した時の処理は以下に記述
 function showResult(resp) {
-
+  let data = resp.data;
+  printdom(data);
 }
 
 // 課題6-1: 通信エラーが発生した時の処理
@@ -129,6 +228,8 @@ function finish() {
 // 以下はテレビ番組表のデータサンプル
 // 注意: 第5回までは以下を変更しないこと！
 // 注意2: 課題6-1 で以下をすべて削除すること
+/*
+
 let data = {
   "list": {
     "g1": [
@@ -210,3 +311,4 @@ let data = {
   }
 };
 
+*/

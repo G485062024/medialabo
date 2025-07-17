@@ -4,14 +4,20 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="project.css">
         <title>NHK番組表</title>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
         <script src="tv-program.js" defer></script>
     </head>
     <body>
         <h1>番組表の検索結果</h1>
         <div>
             <label for="input1">チャンネル</label>
-            <input id = "input1" type="text" name="label" size = "10">
-            <button id="input1">検索</button>
+            
+            <!-- <input id = "input1" type="text" name="label" size = "10">. -->
+             <select id="option" name="option">
+                <option value="NHK総合1">NHK総合1</option>
+                <option value="Eテレ1">Eテレ1</option>
+             </select>
+            <!-- <button id="input1">検索</button> -->
         </div>
         <div>
             <label for="options">ジャンル</label>
@@ -32,7 +38,7 @@
         <button id = "submit">検索</button>
         </div>
         <h3>NHKの番組表（検索結果は2件）</h3>
-            <img src="NHKTV.jpg" alt="番組の画像">
+<!--            <img src="NHKTV.jpg" alt="番組の画像">
         <h2>検索結果1件目</h2>
 
         <div id = table>
@@ -55,7 +61,7 @@
                 <li>出演者:【声】松本まりか，【出演】Ａｗｅｓｏｍｅ　Ｃｉｔｙ　Ｃｌｕｂ，【監督】西村一彦，【脚本】加納新太，【原案】江口寿史</li>
         </ul>
         </div>
+        -->
         <div id = result></div>
-
         </body>
 </html>
