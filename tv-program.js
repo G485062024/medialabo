@@ -93,6 +93,7 @@ div.insertAdjacentElement('afterend', u);
 u.insertAdjacentHTML('beforeend', '<br>');
 u.insertAdjacentHTML('beforeend', '<br>');
 }
+
 //e1の時
 }else if(id2 == 'e1'){
 
