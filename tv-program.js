@@ -92,6 +92,8 @@ div.insertAdjacentElement('afterend', u);
 //分かれ目
 u.insertAdjacentHTML('beforeend', '<br>');
 u.insertAdjacentHTML('beforeend', '<br>');
+u.insertAdjacentHTML('beforeend', '<br>');
+
 }
 
 //e1の時
@@ -132,6 +134,7 @@ div.insertAdjacentElement('afterend', u);
 //二個目の番組
 
 //分かれ目
+u.insertAdjacentHTML('beforeend', '<br>');
 u.insertAdjacentHTML('beforeend', '<br>');
 u.insertAdjacentHTML('beforeend', '<br>');
 }

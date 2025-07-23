@@ -1,4 +1,4 @@
-#table{
+/*#table{
     width: auto;
     border-collapse: collapse;
     background-color: thistle;
@@ -13,18 +13,21 @@ img{
   height: 308px;
   padding-right: 155px;
   padding-top: 10px;
-}
+}*/
 body{
     background-color: wheat;
 }
 
-h1{
+ul{
   display: block;
   text-align: center;
   font-style: normal;
-  font-size: 5em;
+  font-size: 25px;
   padding-bottom: 0.3em;
   border-bottom: 2px solid #375e97;
   width: 60%;
   margin: 1em auto;
+  border-bottom: 2px solid #375e97;
+  background-color: lightcyan;
+  padding: 60px;
 }
